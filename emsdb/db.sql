@@ -1,0 +1,25 @@
+CREATE ROLE ems_owner WITH SUPERUSER PASSWORD 'ems_owner';
+
+CREATE DATABASE emsdb 
+WITH OWNER = 'ems_owner' 
+TEMPLATE template0
+ENCODING 'UTF8'
+LC_COLLATE 'en_US.UTF-8'
+LC_CTYPE 'en_US.UTF-8';
+
+\c emsdb
+
+CREATE SCHEMA validation AUTHORIZATION ems_owner;
+CREATE SCHEMA messages AUTHORIZATION ems_owner;
+
+CREATE ROLE ems_reader WITH PASSWORD 'ems_reader' LOGIN;
+GRANT USAGE ON SCHEMA messages TO ems_reader;
+GRANT SELECT ON ALL TABLES IN SCHEMA messages TO ems_reader;
+GRANT USAGE ON SCHEMA validation TO ems_reader;
+GRANT SELECT ON ALL TABLES IN SCHEMA validation TO ems_reader;
+
+CREATE ROLE ems_writer WITH PASSWORD 'ems_writer' LOGIN;
+GRANT USAGE ON SCHEMA messages TO ems_writer;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA messages TO ems_writer;
+GRANT USAGE ON SCHEMA validation TO ems_writer;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA validation TO ems_writer;

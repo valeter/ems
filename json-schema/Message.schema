@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+
+    "type": "object",
+    "properties": {
+        "name": { "type": "string" },
+
+        "channel": { "type": "string" },
+        "address": { "type": "string" },
+
+        "userId": { "type": "string" },
+
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+
+        "templates": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "part": { "type": "string" },
+                    "name": { "type": "string" },
+                    "body": { "type": "string" },
+                    "language": { "type": "string" }
+                },
+                "required": ["part", "name", "body", "language"]
+            }
+        },
+
+        "model": {
+            "type": "object",
+            "properties": {
+                "trigger-data": {
+                    "type": "object"
+                },
+
+                "message-data": {
+                    "type": "object"
+                },
+
+                "attachment": {
+                    "type": "object",
+                    "properties": {
+                        "name": { "type": "string" },
+                        "media-type": { "type": "string" },
+                        "url": { "type": "string" },
+                        "size": { "type": "number" }
+                    },
+                    "required": ["url", "size"]
+                }
+            },
+            "required": ["trigger-data", "message-data"]
+        }
+    },
+    "required": ["name", "channel", "userId", "address", "tags", "templates"]
+}

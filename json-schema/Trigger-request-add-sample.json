@@ -1,0 +1,9 @@
+{
+    "type": "my-trigger",
+    "userId": "my-user-id",
+    "tags": [ "my-tag1", "my-tag2" ],
+    "data": {
+        "my-property-1": "my-value-1",
+        "my-property-2": "my-value-2"
+    }
+}

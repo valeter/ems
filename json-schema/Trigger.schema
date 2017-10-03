@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+
+    "type": "object",
+    "properties": {
+        "type": { "type": "string" },
+
+        "userId": { "type": "string" },
+        
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+
+        "processors": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+
+        "filters": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+
+        "data": {
+            "type": "object"
+        }
+    },
+    "required": ["type", "userId", "tags", "data", "processors", "filters"]
+}

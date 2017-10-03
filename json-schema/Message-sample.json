@@ -1,0 +1,44 @@
+{
+    "name": "my-message",
+
+    "channel": "email",
+    "address": "my-email@email.com",
+
+    "userId": "my-user-id",
+
+    "tags": [ "my-tag-1", "my-tag-2" ], 
+
+    "templates": [
+        {
+            "part": "body",
+            "name": "my-body-template",
+            "body": "my-body",
+            "language": "jinja2"
+        },
+        {
+            "part": "subject",
+            "name": "my-subject-template",
+            "body": "my-subject",
+            "language": "jinja2"
+        }
+    ],
+
+    "model": {
+        "trigger-data": {
+            "my-trigger-property-1": "my-trigger-value-1",
+            "my-trigger-property-2": "my-trigger-value-2"
+        },
+
+        "message-data": {
+            "my-message-property-1": "my-message-value-1",
+            "my-message-property-2": "my-message-value-2"
+        },
+
+        "attachment": {
+            "name": "my-file",
+            "media-type": "application/pdf",
+            "url": "http://my-attach",
+            "size": 1024
+        }
+    }
+}

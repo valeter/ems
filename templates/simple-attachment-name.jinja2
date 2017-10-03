@@ -1,0 +1,5 @@
+{% if message-data.attachment-name %}
+{{ message-data.attachment-name }}
+{% elif trigger-data.attachment-name %}
+{{ trigger-data.attachment-name }}
+{% endif %}

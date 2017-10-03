@@ -1,0 +1,9 @@
+BEGIN;
+
+CREATE TABLE validation.JSON_SCHEMA (
+    NAME text PRIMARY KEY,
+    BODY text NOT NULL
+)
+;
+
+COMMIT;

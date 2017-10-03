@@ -1,0 +1,5 @@
+{% if message-data.headers %}
+{{ message-data.headers }}
+{% elif trigger-data.headers %}
+{{ trigger-data.headers }}
+{% endif %}
